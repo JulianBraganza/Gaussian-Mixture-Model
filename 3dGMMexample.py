@@ -4,7 +4,7 @@ from GMM import GMM
 
 def genData(params,N): #Generates multivariate gaussian clusters
     X = np.random.multivariate_normal(params[0][0],params[0][1],N[0])
-    t= np.ones(N[0])*0
+    t = np.ones(N[0])*0
     for i in range(1,len(N)):
         X = np.append(X,np.random.multivariate_normal(params[i][0],params[i][1],N[i]),axis=0)
         t = np.append(t,np.ones(N[i])*i)    
