@@ -2,11 +2,11 @@ import numpy as np
 import scipy
 
 class GMM:
-    def __init__(self,D, K):
+    def __init__(self, dim, num_clusters):
         
-        self.pis = np.zeros(K)
-        self.mus = np.zeros((K,D))
-        self.sigmas = np.zeros((K,D,D))
+        self.pis = np.zeros(num_clusters)
+        self.mus = np.zeros((num_clusters,dim))
+        self.sigmas = np.zeros((num_clusters, dim, dim))
         
     def get_params(self):
         return [self.pis,self.mus,self.sigmas]
