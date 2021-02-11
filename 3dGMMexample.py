@@ -49,7 +49,7 @@ ax.set_zlabel('z')
 plt.show()
 
 #Fitting model
-GMM_model = GMM(D=3,K=3)
+GMM_model = GMM(dim=3,num_clusters=3)
 GMM_model.train(real_data[0],10**(-10))
 
 assignments = (real_data[0], np.argmax(np.apply_along_axis(GMM_model.resp, 1, real_data[0]), axis = 1))
