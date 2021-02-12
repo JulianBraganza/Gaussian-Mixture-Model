@@ -52,6 +52,9 @@ plt.show()
 GMM_model = GMM(dim=3,num_clusters=3)
 GMM_model.train(real_data[0],10**(-10))
 
+
+#Showing the predicted clusters
+
 assignments = (real_data[0], np.argmax(np.apply_along_axis(GMM_model.resp, 1, real_data[0]), axis = 1))
 
 fig = plt.figure()
